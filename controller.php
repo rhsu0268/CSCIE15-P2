@@ -1,4 +1,4 @@
-<?php
+<?ph!p
 
 	error_reporting(E_ALL);       # Report Errors, Warnings, and Notices
 	ini_set('display_errors', 1); # Display errors on page (instead of a log file)
@@ -44,7 +44,7 @@
 		$numberOfWords = $_POST["numberOfWords"];
 		if ($numberOfWords <= 0 || $numberOfWords > 4)
 		{
-			$userMessage = "Please enter a valid number for words";
+			$userMessage = "Please enter a valid number for words!";
 		}
 		else 
 		{

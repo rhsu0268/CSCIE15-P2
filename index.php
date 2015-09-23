@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Narrow Jumbotron Template for Bootstrap</title>
+    <title>xkcd Password Generator</title>
     <?php require 'controller.php'; ?>
 
     <!-- Bootstrap core CSS -->
@@ -43,7 +43,8 @@
 
       <div class="jumbotron">
         <h1>xkcd</h1>
-        <p class="lead">Choose a number, select some options and get your very own xkcd password!</p>
+        <p class="lead">xkcd is a fun comic about technology written by Randall Munroe.</p>
+        <p>Enter a number, select some options and get your very own xkcd password!</p>
         
       </div>
 
