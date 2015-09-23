@@ -1,7 +1,7 @@
 <?php
 
-	error_reporting(E_ALL);       # Report Errors, Warnings, and Notices
-	ini_set('display_errors', 1); # Display errors on page (instead of a log file)
+	//error_reporting(E_ALL);       # Report Errors, Warnings, and Notices
+	//ini_set('display_errors', 1); # Display errors on page (instead of a log file)
 
 	//$words = file_get_contents("http://www.paulnoll.com/Books/Clear-English/words-01-02-hundred.html");
 	
@@ -53,7 +53,6 @@
 	}
 	
 	// get the values of the checkboxes
-	
 	if (isset($_POST["number"]))
 	{
 		$includeNumber = TRUE;
@@ -73,9 +72,11 @@
 	{
 		return;
 	}
+
+	// handle each different case
 	else if ($includeNumber && $specialCharacter)
 	{
-		$wordsPicked = generatePassword($numberOfWords, $wordsPicked, $wordList);
+		generatePassword($numberOfWords, $wordList);
 		$wordsPickedAndNumber = addNumber($wordsPicked);
 		$wordsPickedFinal = addCharacter($wordsPickedAndNumber);
 		$passwordString = printPassword($wordsPickedFinal, $passwordString);
@@ -83,7 +84,7 @@
 	else if ($includeNumber)
 	{
 
-		$wordsPicked = generatePassword($numberOfWords, $wordsPicked, $wordList);
+		generatePassword($numberOfWords, $wordList);
 		$wordsPicked = addNumber($wordsPicked);
 		$passwordString = printPassword($wordsPicked, $passwordString);
 	}
@@ -91,20 +92,26 @@
 	else if ($specialCharacter)
 	{
 
-		$wordsPicked = generatePassword($numberOfWords, $wordsPicked, $wordList);
+		generatePassword($numberOfWords, $wordList);
 		$wordsPicked = addCharacter($wordsPicked);
 		$passwordString = printPassword($wordsPicked, $passwordString);
 	}
+	
 	else
 	{
-		$wordsPicked = generatePassword($numberOfWords, $wordsPicked, $wordList);
+		//$wordsPicked = generatePassword($numberOfWords, $wordsPicked, $wordList);
+		generatePassword($numberOfWords, $wordList);
 		$passwordString = printPassword($wordsPicked, $passwordString);
 	}
 
-	
-	function generatePassword($numberOfWords, $array, $wordList)
+	/* 
+	 *	This is a function that generates random words inside an array. 
+	 *  @param: $numberOfWords, $array, $wordList
+	 *  @return: N/A
+	 */
+	function generatePassword($numberOfWords, $wordList)
 	{
-
+		global $wordsPicked;
 		// pick random numbers that matches the number user inputs
 		for ($i = 0; $i < $numberOfWords; $i++)
 		{
@@ -129,12 +136,16 @@
 			}
 			*/
 			// push into array
-			array_push($array, $wordList[$randomNumber]);
+			array_push($wordsPicked, $wordList[$randomNumber]);
 
 		}
-		return $array;
 	}
 
+	/* 
+	 *	This is a function that loops over an array and prints the password string
+	 *  @param: $wordsPicked, $passwordString
+	 *  @return: $passwordString
+	 */
 	function printPassword($wordsPicked, $passwordString)
 	{
 		for ($i = 0; $i < count($wordsPicked); $i++)
@@ -144,6 +155,11 @@
 		return $passwordString;
 	}
 	
+	/* 
+	 *	This is a function that adds a number to the array
+	 *  @param: $wordsPicked
+	 *  @return: $wordsPicked
+	 */
 	function addNumber($wordsPicked)
 	{
 		$keyNumber = rand(0, 9);
@@ -152,6 +168,11 @@
 		return $wordsPicked;
 	}
 
+	/* 
+	 *	This is a function that adds a character to the array
+	 *  @param: $wordsPicked
+	 *  @return: $wordsPicked
+	 */
 	function addCharacter($wordsPicked)
 	{
 		// create an array for special character
