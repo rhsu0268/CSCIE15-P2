@@ -155,7 +155,7 @@
 	function addCharacter($wordsPicked)
 	{
 		// create an array for special character
-		$specialCharacters = Array("#", "$", "&", "*");
+		$specialCharacters = Array("#", "$", "&", "*", "@");
 
 		// add a number to the words picked
 		$specialCharacter = rand(0, count($specialCharacters) - 1);

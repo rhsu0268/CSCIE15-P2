@@ -70,7 +70,7 @@
               </label>
               <br>
               <label>
-                <input name="specialCharacter" type="checkbox"> Include a special character (#, @)
+                <input name="specialCharacter" type="checkbox"> Include a special character (#, @, etc.)
               </label>
             </div>
             <button type="submit" class="btn btn-primary">Generate Password</button>
