@@ -43,7 +43,9 @@
 
       <div class="jumbotron">
         <h1>xkcd</h1>
-        <p class="lead">xkcd is a fun comic about technology written by Randall Munroe.</p>
+        <p class="lead">xkcd is a fun comic about technology written by Randall Munroe. This project is an inspiration of one of his comics. 
+          In it, he pokes fun at the way we always need to think up of long and confusing passwords that are hard to remember.
+        </p>
         <p>Enter a number, select some options and get your very own xkcd password!</p>
         
       </div>
