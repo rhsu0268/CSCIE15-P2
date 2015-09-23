@@ -15,6 +15,8 @@
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
+    <link href="css/styles.css" rel="stylesheet">
+
     <!-- Custom styles for this template -->
     <link href="jumbotron-narrow.css" rel="stylesheet">
 
@@ -55,7 +57,7 @@
                 ?>
               </div>
               <label for="numberOfWords">Number of Words (Max: 4)</label>
-              <input name="numberOfWords" type="number" class="form-control" id="Number Of Words" placeholder="NumberOfWords">
+              <input name="numberOfWords" type="number" class="form-control" id="Number Of Words" placeholder="Number Of Words">
             </div>
             
            
@@ -68,7 +70,7 @@
                 <input name="specialCharacter" type="checkbox"> Include a special character (#, @)
               </label>
             </div>
-            <button type="submit" class="btn btn-default">Generate Password</button>
+            <button type="submit" class="btn btn-primary">Generate Password</button>
           </form>
         </div>
 
@@ -76,7 +78,7 @@
           <h2>Password</h2>
           <div class="panel panel-success">
 
-            <div class="panel-body">
+            <div class="panel-body" id="passwordText">
               <?php
 
                 if ($passwordString)
@@ -85,7 +87,7 @@
                 }
                 else 
                 {
-                  echo "Generate a password now!";
+                  echo "Generate a password now";
                 }
 
               ?>
@@ -93,9 +95,9 @@
           </div>
         </div>
       </div>
-
+      <br>
       <footer class="footer">
-        <p>&copy; Richard Hsu 2015</p>
+        <p id="footer">&copy; Richard Hsu 2015</p>
       </footer>
 
     </div> <!-- /container -->
